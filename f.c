@@ -34,9 +34,9 @@ void search(int i, int n, struct car*cars){
 int deleter(int i,int n, struct car*cars, char* brand){
     for (i = 0; i < n; i++) {
         if (strcmp(cars[i].body.body.type, brand) == 0) {
+            free(cars[i].brand);
             for (int j = i; j < n - 1; j++) {
-                cars[j] = cars[j + 1];} n--;
-            i--;
+                cars[j] = cars[j + 1];} n--; i--;
         }
     }
     for (i = 0; i < n; i++) {
